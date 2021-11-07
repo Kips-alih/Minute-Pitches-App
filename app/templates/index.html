@@ -1,0 +1,20 @@
+{% extends 'base.html'%}
+{% import 'macros.html' as macro%}
+
+
+<!-- Styles block -->
+
+{% block styles%}
+    {{ super() }}
+    <link rel="stylesheet" href="{{url_for('static',filename='css/index.css')}}">
+{% endblock %}
+{% block content %}
+<div class="container">
+  
+  <!-- {%for pitch in promotionPitches%}
+  {{pitch.pitch_title}}
+  {%endfor%} -->
+  <hr>
+</div>
+  <h1> Welcome To Minute Pitches</h1>
+{% endblock %}
