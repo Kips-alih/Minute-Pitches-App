@@ -17,12 +17,16 @@ A News Api application where a user can access different news sources, get the a
 
 ## User Stories
 
-The user is able to :
+Here are some user stories:
 
-* See various news sources on the homepage of the application.
-* Select a news source and see all news articles from the selected news source.
-* See the image, description and the time a news article was created.
-* Click on an article and read the full article on the source website.
+* see the pitches other people have posted.
+* vote on the pitch they liked and give it a downvote or upvote.
+* be signed in for me to leave a comment
+* receive a welcoming email once I sign up.
+* view the pitches I have created in my profile page.
+* comment on the different pitches and leave feedback.
+* submit a pitch in any category.
+* view the different categories.
 
 ### To run this application
 
