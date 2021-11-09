@@ -34,10 +34,14 @@ class ProdConfig(Config):
         Config: The parent configuration class with General configuration settings
     '''
     SQLALCHEMY_DATABASE_URI = os.environ.get("DATABASE_URL")
-    pass
+    if SQLALCHEMY_DATABASE_URI and SQLALCHEMY_DATABASE_URI.startswith("postgres://"):
+        SQLALCHEMY_DATABASE_URI = SQLALCHEMY_DATABASE_URI.replace("postgres://", "postgresql://", 1)
+
 #Newly added class with new SQLALCHEMY_DATABASE_URI to connect to our test database
 class TestConfig(Config):
-  pass
+    SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://moringa:kipngeno@localhost/minpitch_test'
+
+    pass
 
 
 class DevConfig(Config):
