@@ -6,15 +6,38 @@
 
 {% block styles%}
     {{ super() }}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
     <link rel="stylesheet" href="{{url_for('static',filename='css/index.css')}}">
 {% endblock %}
 {% block content %}
 <div class="container">
-  
-  <!-- {%for pitch in promotionPitches%}
-  {{pitch.pitch_title}}
-  {%endfor%} -->
-  <hr>
+  <h1 class="text-center"> Welcome To Minute Pitches</h1>
+
+  {% for pitch in pitches %}
+
+   <div class="row">
+     <div class="col-md-6">
+      <h4>Pitch Title: {{ pitch.title }}</h4>
+      <p>Pitch Category: {{pitch.category}}</p>
+      <p>Description : {{ pitch.description}}</p>
+      <p>Pitch date : {{pitch.date_posted.strftime('%Y-%m-%d')}}</p>
+      <p>Pitch Owner: {{pitch.user.username}}</p>
+      <button><a href="{{ url_for('main.pitch_comments', id = pitch.id)}}">Comment</a></button>
+      <a href="{{url_for('main.like',id = pitch.id)}}">
+        <button id="like" class="btn btn-sm " (click)='upvote()'>Like: {{pitch.upvote.count()}}<i class="fa fa-thumbs-up" id="thumbUp"></i></button>
+      </a>
+
+      <a href="{{url_for('main.dislike',id = pitch.id)}}">
+          <button class="btn btn-sm " (click)='downvote()' id="dislike">Dislike: {{pitch.downvote.count()}}<i class="fa fa-thumbs-down"id="thumbDown"></i></button>
+      </a> 
+    </div>
+
+   </div>
+
+  {% endfor %}
+
 </div>
-  <h1> Welcome To Minute Pitches</h1>
+
+
 {% endblock %}
