@@ -80,17 +80,17 @@ def update_profile(uname):
     if user is None:
         abort(404)
 
-    add_comment_form = UpdateProfile()
+    profile_form = UpdateProfile()
 
-    if add_comment_form.validate_on_submit():
-        user.bio = add_comment_form.bio.data
+    if profile_form.validate_on_submit():
+        user.bio = profile_form.bio.data
 
         db.session.add(user)
         db.session.commit()
 
         return redirect(url_for('.profile',uname=user.username))
 
-    return render_template('profile/update.html',add_comment_form =add_comment_form)
+    return render_template('profile/update.html',profile_form =profile_form)
 
 @main.route('/user/<uname>/update/pic',methods= ['POST'])
 @login_required
