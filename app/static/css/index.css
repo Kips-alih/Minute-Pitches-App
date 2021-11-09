@@ -4,3 +4,14 @@
 #pitching{
   background-color: aqua;
 }
+body{
+  background-color: aqua;
+}
+button#like{
+  background-color: green;
+  color: white;
+}
+button#dislike{
+  background-color: brown;
+  color: white;
+}

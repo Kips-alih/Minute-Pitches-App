@@ -18,11 +18,11 @@
 
    <div class="row">
      <div class="col-md-6">
-      <h4>Pitch Title: {{ pitch.title }}</h4>
-      <p>Pitch Category: {{pitch.category}}</p>
-      <p>Description : {{ pitch.description}}</p>
-      <p>Pitch date : {{pitch.date_posted.strftime('%Y-%m-%d')}}</p>
-      <p>Pitch Owner: {{pitch.user.username}}</p>
+      <h4><strong>Title:</strong> {{ pitch.title }}</h4>
+      <p><strong>Category:</strong> {{pitch.category}}</p>
+      <p><strong>Description:</strong> {{ pitch.description}}</p>
+      <p><strong>Pitch date:</strong> {{pitch.date_posted.strftime('%Y-%m-%d')}}</p>
+      <p><strong>Pitch Owner:</strong> {{pitch.user.username}}</p>
       <button><a href="{{ url_for('main.pitch_comments', id = pitch.id)}}">Comment</a></button>
       <a href="{{url_for('main.like',id = pitch.id)}}">
         <button id="like" class="btn btn-sm " (click)='upvote()'>Like: {{pitch.upvote.count()}}<i class="fa fa-thumbs-up" id="thumbUp"></i></button>
