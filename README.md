@@ -30,7 +30,7 @@ Here are some user stories:
 
 ### To run this application
 
- Click the [live](https://the-minute-pitches.herokuapp.com/) link.
+ Click the [live](https://minpitches.herokuapp.com/) link.
 
 ## Technologies used
 
